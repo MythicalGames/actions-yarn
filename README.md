@@ -1,7 +1,4 @@
 # GitHub Actions for Yarn
-
-> Look [github.com/actions/npm](https://github.com/actions/npm) for more details.
-
 This Action for [yarn](https://yarnpkg.com) enables arbitrary actions with the `yarn` command-line client, including testing packages and publishing to a registry.
 
 > **Please keep in mind** that this Action was originally written for GitHub Actions beta (when Docker was the only way of doing things).
@@ -20,13 +17,13 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - uses: borales/actions-yarn@v2.0.0
+      - uses: MythicalGames/actions-yarn@v2.4.0
         with:
           cmd: install # will run `yarn install` command
-      - uses: borales/actions-yarn@v2.0.0
+      - uses: MythicalGames/actions-yarn@v2.4.0
         with:
           cmd: build # will run `yarn build` command
-      - uses: borales/actions-yarn@v2.0.0
+      - uses: MythicalGames/actions-yarn@v2.4.0
         with:
           cmd: test # will run `yarn test` command
 ```
@@ -47,7 +44,7 @@ jobs:
 To authenticate with, and publish to, a registry other than `registry.npmjs.org`:
 
 ```yml
-- uses: borales/actions-yarn@v2.0.0
+- uses: MythicalGames/actions-yarn@v2.4.0
   with:
     auth-token: ${{ secrets.NPM_TOKEN }}
     registry-url: someOtherRegistry.someDomain.net
